@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div id="options">
+	<input onclick="clearMarkers();" type=button value="Hide Markers">
+</div>
+
+	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+
+<!-- gives the map space on the page -->
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GMAPS_KEY"]%>&libraries=places&callback=initAutoComplete" async defer></script>
