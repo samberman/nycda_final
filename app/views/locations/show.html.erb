@@ -3,6 +3,7 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
+<h5>Address: </h5><%= @location.address %>
 <h5>Latitude: </h5><%= @location.latitude %>
 <h5>Longitude: </h5><%= @location.longitude %>
 
@@ -14,4 +15,5 @@
 <% end %>
 </ul>
 
-<%= link_to "Find another location", locations_path %>
+<%= link_to "Find another location", locations_path %
+<h5>Address: </h5><%= >

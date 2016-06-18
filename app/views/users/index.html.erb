@@ -1,2 +1,19 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="row" id="top">
+	<form>
+		<input id="yelp_search" type="search" placeholder="What are you hungry for?">
+		<button type="button">Roll the dice</button>
+	</form>
+</div>
+
+<div class="row">
+	<div class="col-md-4" id="results">
+	<% i = 0 %>
+		<% for i in 0..9 %>
+			<h4>Name: <%= @response.businesses[i].name %></h4>
+			<h4>Phone number: <%= @response.businesses[i].phone %></h4>
+			<h4>Address: <%= @response.businesses[i].location.display_address %></h4>
+			<h4>Rating: <%= @response.businesses[i].rating %></h4>
+			<h4>Review Snippet: <%= @response.businesses[i].snippet_text %></h4>
+		<% end %>
+	</div>
+</div>
