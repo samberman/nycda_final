@@ -1,0 +1,10 @@
+$('#results').empty();
+$('#results').append("<div class='results'>
+	        <h4>Name: <%= @response.businesses[@i].name %></h4>
+	        <h4>Phone number: <%= @response.businesses[@i].phone %></h4>
+	        <h4>Address: <%= @response.businesses[@i].location.display_address %></h4>
+	        <h4>Rating: <%= @response.businesses[@i].rating %></h4>
+	        <h4>Review Snippet: <%= @response.businesses[@i].snippet_text %></h4>
+        </div>
+     
+      <%= button_to 'Next', search_path(@i, response: @response), remote: true %>");

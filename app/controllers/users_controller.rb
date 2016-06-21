@@ -2,15 +2,15 @@ class UsersController < ApplicationController
   def index
     @user = User.all
     
-    @response = Yelp.client.search('90 John Street, New York, NY', {term:'spanish',limit:10}, radius_filter:'1600')
+    # @response = Yelp.client.search('90 John Street, New York, NY', {term:'spanish',limit:10}, radius_filter:'1600')
     # @shops = @response.businesses
 
     current_user = User.find_by_id(session[:current_user_id])
   end
 
-  def search
-    render json: Yelp.client.search('New York')
-  end
+  # def search
+  #   render json: Yelp.client.search('New York')
+  # end
 
   def show
     @user = User.find(params[:id])

@@ -3,8 +3,14 @@ Rails.application.routes.draw do
 
   resources :locations, :users, :products, :transactions
 
+  # returns the log in form
   get '/login', to: 'sessions#new'
+  # logs the user in
   post '/login', to: 'sessions#create'
+  # returns the search form
+  get '/locations-search', to: 'locations#search'
+  # sends seach parameters to server
+  post '/locations-search/:id', to: 'locations#search', as: :search
 
   delete '/logout', to: 'sessions#destroy'
 
@@ -12,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#home'
+  root 'locations#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,48 @@
+<div class='row'>
+  <!-- gives space for results -->
+  <div class='col-md-4' id='results'>
+  </div>
+  <%= button_tag "Roll Again", id: "next" %>
+</div>
+<%= button_to "Map", users_path %>
+<script type="text/javascript">
+
+  var responses = [
+    '<div class="results"><h4>Name: <%= @response.businesses[0].name %></h4><h4>Phone number: <%= @response.businesses[0].phone %></h4><h4>Address: <%= @response.businesses[0].location.display_address %></h4><h4>Rating: <%= @response.businesses[0].rating %></h4><h4>Review Snippet: <%= @response.businesses[0].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[1].name %></h4><h4>Phone number: <%= @response.businesses[1].phone %></h4><h4>Address: <%= @response.businesses[1].location.display_address %></h4><h4>Rating: <%= @response.businesses[1].rating %></h4><h4>Review Snippet: <%= @response.businesses[1].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[2].name %></h4><h4>Phone number: <%= @response.businesses[2].phone %></h4><h4>Address: <%= @response.businesses[2].location.display_address %></h4><h4>Rating: <%= @response.businesses[2].rating %></h4><h4>Review Snippet: <%= @response.businesses[2].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[3].name %></h4><h4>Phone number: <%= @response.businesses[3].phone %></h4><h4>Address: <%= @response.businesses[3].location.display_address %></h4><h4>Rating: <%= @response.businesses[3].rating %></h4><h4>Review Snippet: <%= @response.businesses[3].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[4].name %></h4><h4>Phone number: <%= @response.businesses[4].phone %></h4><h4>Address: <%= @response.businesses[4].location.display_address %></h4><h4>Rating: <%= @response.businesses[4].rating %></h4><h4>Review Snippet: <%= @response.businesses[4].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[5].name %></h4><h4>Phone number: <%= @response.businesses[5].phone %></h4><h4>Address: <%= @response.businesses[5].location.display_address %></h4><h4>Rating: <%= @response.businesses[5].rating %></h4><h4>Review Snippet: <%= @response.businesses[5].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[6].name %></h4><h4>Phone number: <%= @response.businesses[6].phone %></h4><h4>Address: <%= @response.businesses[6].location.display_address %></h4><h4>Rating: <%= @response.businesses[6].rating %></h4><h4>Review Snippet: <%= @response.businesses[6].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[7].name %></h4><h4>Phone number: <%= @response.businesses[7].phone %></h4><h4>Address: <%= @response.businesses[7].location.display_address %></h4><h4>Rating: <%= @response.businesses[7].rating %></h4><h4>Review Snippet: <%= @response.businesses[7].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[8].name %></h4><h4>Phone number: <%= @response.businesses[8].phone %></h4><h4>Address: <%= @response.businesses[8].location.display_address %></h4><h4>Rating: <%= @response.businesses[8].rating %></h4><h4>Review Snippet: <%= @response.businesses[8].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[9].name %></h4><h4>Phone number: <%= @response.businesses[9].phone %></h4><h4>Address: <%= @response.businesses[9].location.display_address %></h4><h4>Rating: <%= @response.businesses[9].rating %></h4><h4>Review Snippet: <%= @response.businesses[9].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[10].name %></h4><h4>Phone number: <%= @response.businesses[10].phone %></h4><h4>Address: <%= @response.businesses[10].location.display_address %></h4><h4>Rating: <%= @response.businesses[10].rating %></h4><h4>Review Snippet: <%= @response.businesses[10].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[11].name %></h4><h4>Phone number: <%= @response.businesses[11].phone %></h4><h4>Address: <%= @response.businesses[11].location.display_address %></h4><h4>Rating: <%= @response.businesses[11].rating %></h4><h4>Review Snippet: <%= @response.businesses[11].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[12].name %></h4><h4>Phone number: <%= @response.businesses[12].phone %></h4><h4>Address: <%= @response.businesses[12].location.display_address %></h4><h4>Rating: <%= @response.businesses[12].rating %></h4><h4>Review Snippet: <%= @response.businesses[12].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[13].name %></h4><h4>Phone number: <%= @response.businesses[13].phone %></h4><h4>Address: <%= @response.businesses[13].location.display_address %></h4><h4>Rating: <%= @response.businesses[13].rating %></h4><h4>Review Snippet: <%= @response.businesses[13].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[14].name %></h4><h4>Phone number: <%= @response.businesses[14].phone %></h4><h4>Address: <%= @response.businesses[14].location.display_address %></h4><h4>Rating: <%= @response.businesses[14].rating %></h4><h4>Review Snippet: <%= @response.businesses[14].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[15].name %></h4><h4>Phone number: <%= @response.businesses[15].phone %></h4><h4>Address: <%= @response.businesses[15].location.display_address %></h4><h4>Rating: <%= @response.businesses[15].rating %></h4><h4>Review Snippet: <%= @response.businesses[15].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[16].name %></h4><h4>Phone number: <%= @response.businesses[16].phone %></h4><h4>Address: <%= @response.businesses[16].location.display_address %></h4><h4>Rating: <%= @response.businesses[16].rating %></h4><h4>Review Snippet: <%= @response.businesses[16].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[17].name %></h4><h4>Phone number: <%= @response.businesses[17].phone %></h4><h4>Address: <%= @response.businesses[17].location.display_address %></h4><h4>Rating: <%= @response.businesses[17].rating %></h4><h4>Review Snippet: <%= @response.businesses[17].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[18].name %></h4><h4>Phone number: <%= @response.businesses[18].phone %></h4><h4>Address: <%= @response.businesses[18].location.display_address %></h4><h4>Rating: <%= @response.businesses[18].rating %></h4><h4>Review Snippet: <%= @response.businesses[18].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div class="results"><h4>Name: <%= @response.businesses[19].name %></h4><h4>Phone number: <%= @response.businesses[19].phone %></h4><h4>Address: <%= @response.businesses[19].location.display_address %></h4><h4>Rating: <%= @response.businesses[19].rating %></h4><h4>Review Snippet: <%= @response.businesses[19].snippet_text.gsub("\n", " ") %></h4></div>'
+  ]
+  var i = 0
+  $('#results').append(responses[i])
+
+  $('#next').css({
+    "display": "block",
+    "margin": "0 auto"
+  });
+
+  $('#next').click(function(){
+    i++
+    if(i == 20){
+      $('#next').hide()
+    }
+    $('#results').empty();
+    $('#results').append(responses[i])
+  })
+</script>

@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	@user = User.where(email: params[:email]).first
-		if @user && @user.password == params[:password]
+  	@user = User.find_by_email(params[:email])
+		if @user and @user.password == params[:password]
 			session[:user_id] = @user.id
 			flash[:notice] = "You have logged in successfully."
-		redirect_to user_path(@user)
+		redirect_to locations_path
 		else
 			flash[:alert] = "Sorry, you are not logged in."
 			redirect_to root_path
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
   	session[:user_id] = nil
 			# @user = user.destroy
 			flash[:notice] = "You are now logged out."
-			redirect_to root_path
+			redirect_to sessions_new_path
   end
 end

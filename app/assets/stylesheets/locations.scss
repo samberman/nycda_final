@@ -1,3 +1,37 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	margin: 0 auto;
+}
+
+#top {
+	text-align: center;
+	// width: 80%;
+	margin: 0 auto;
+}
+
+#yelp_search {
+	margin: 5px;
+	height: 10px;
+	width: 160px;
+}
+// #type and #current_location allow the form to be relatively centered on the page at smaller screen sizes
+#type {
+	margin-left: 50px;
+}
+
+#current_location {
+	margin-left: -25px;
+}
+
+
+#results {
+	text-align: center;
+}
+
+#next {
+	display: block;
+	margin: 0 auto;
+}

@@ -23,19 +23,41 @@ class LocationsController < ApplicationController
   end
 
   def index
+   # @type = type.all
+    # @locations = Location.all
     # if params[:search].present?
-    # @locations = Location.near(params[:search], 50, :order => :distance)
-    # redirect_to location_path(params[:id])
+    #   @locations = Location.near(params[:search], 50, :order => :distance)
+    #   redirect_to location_path(params[:id])
     # else
     #   @locations = Location.all
     # end
+    if @response
+      print "This is working"
+    else print "not working"
+    end
+    @response = params[:response]
+  end
 
-    @locations = Location.all
-    if params[:search].present?
-      @locations = Location.near(params[:search], 50, :order => :distance)
-      redirect_to location_path(params[:id])
+  def search
+    if params[:id]
+      @i = params[:id].to_i + 1
+      print @i
+      @response = params[:response]
+      print @response
+      respond_to do |format|
+        format.js
+      end
     else
-      @locations = Location.all
+      @i = 0
+      parameters = { term: params[:term], radius_filter: params[:radius_filter] }
+      current_location = { current_location: params[:current_location]}
+      # API call
+      @response = Yelp.client.search(params[:current_location], parameters )
+
+      # category_filter: 'food'}
+      # render json: Yelp.client.search(params[:current_location], params)
+      # render locations_path(@response)
+      # redirect_to action: "index", response: @response 
     end
   end
 
@@ -45,6 +67,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    # @distance = Geocoder::Calculations.distance_between
   end
 
   def destroy
