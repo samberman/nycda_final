@@ -6,7 +6,7 @@
 			<li><%= link_to("Sign out",logout_path, method: :delete) %></li>
       <!-- <li></li> -->
 			<% else %>
-			<li><%= link_to "Sign up!", new_user_path, :id: "sign_up" %><div id="modal">
+			<li><%= link_to "Sign up!", new_user_path, id: "sign_up" %><div id="modal">
 				<%= form_for User.new do |f| %>
 				<%=f.label "first name" %>
 				<%=f.text_field :fname %>
