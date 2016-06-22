@@ -1,18 +1,16 @@
 <div class="row" id="top">
-<%= form_tag locations_search_path, method: :get do %>
-  <div class="col-md-3 left" id="current_location"><%= label_tag :current_location %></div>
-  <%= text_field_tag :current_location %>
-  <div class="col-md-3 left" id="type"><%= label_tag :type %></div>
-  <%= text_field_tag :term %>
-  <div class="col-md-3 field"><%= label_tag :radius_filter %></div>
-  <%= text_field_tag :radius_filter %>
-  <div class="col-md-3 field" id="button"><%= submit_tag "Roll the dice" %></div>
-<% end %>
-
-<!--   <form>
-    <input id="yelp_search" type="search" placeholder="What are you hungry for?">
-    <button type="button" id="press">Roll the dice</button>
-  </form> -->
+  <form role="form">
+    <%= form_tag locations_search_path, method: :get do %>
+      <div class="col-md-3 form-group" >
+     
+      <%= text_field_tag  :current_location, nil, placeholder: "current location" %></div>
+      <div class="col-md-3 form-group" id="type">
+      <%= text_field_tag :term, nil, placeholder: "type of food" %></div>
+      <div class="col-md-3 form-group">
+      <%= text_field_tag :radius_filter, nil, placeholder: "radius (in meters)" %></div>
+      <div class="btn btn-secondary" id="button"><%= submit_tag "Roll the dice" %></div>
+    <% end %>
+  </form>
 </div>
 
 

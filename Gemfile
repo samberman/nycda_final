@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
 gem 'kaminari'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 gem 'yelp', require: 'yelp'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
