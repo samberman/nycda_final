@@ -31,11 +31,15 @@ class LocationsController < ApplicationController
     # else
     #   @locations = Location.all
     # end
+
+    #responseis being shown 
+    @response = params[:response]
     if @response
       print "This is working"
-    else print "not working"
+    else 
+      print "not working"
     end
-    @response = params[:response]
+   
   end
 
   def search
@@ -50,10 +54,9 @@ class LocationsController < ApplicationController
     else
       @i = 0
       parameters = { term: params[:term], radius_filter: params[:radius_filter] }
-      current_location = { current_location: params[:current_location]}
-      # API call
+      # current_location = { current_location: params[:current_location]}
+      # API call, search params are being defined
       @response = Yelp.client.search(params[:current_location], parameters )
-
       # category_filter: 'food'}
       # render json: Yelp.client.search(params[:current_location], params)
       # render locations_path(@response)

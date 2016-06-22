@@ -8,6 +8,16 @@ html, body {
 	padding: 0;
 }
 
+#sign_up_form {
+	display: none;
+	margin: 15% 625%;
+	z-index: 500;
+	position: absolute;
+	background: blue;
+	width: 300px;
+	padding: 50px;
+}
+
 #map {
 	height: 90%;
 }
@@ -24,4 +34,8 @@ html, body {
 
 #results {
 	text-align: center;
+}
+
+#sign_up_form {
+	display: none;
 }

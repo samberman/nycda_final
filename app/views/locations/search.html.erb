@@ -1,10 +1,12 @@
 <div class='row'>
   <!-- gives space for results -->
-  <div class='col-md-4' id='results'>
+  <div id='results'>
   </div>
   <%= button_tag "Roll Again", id: "next" %>
+  <!-- < % = button_tag "Map", users_path %> -->
 </div>
-<%= button_to "Map", users_path %>
+
+<!-- < % = response.business.image_url %> -->
 <script type="text/javascript">
 
   var responses = [
@@ -34,7 +36,7 @@
 
   $('#next').css({
     "display": "block",
-    "margin": "0 auto"
+    "margin": "0 auto",
   });
 
   $('#next').click(function(){

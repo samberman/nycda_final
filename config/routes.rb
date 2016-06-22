@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   # logs the user in
   post '/login', to: 'sessions#create'
   # returns the search form
-  get '/locations-search', to: 'locations#search'
+  get '/locations-search', to: 'locations#search', as: :locations_search
   # sends seach parameters to server
-  post '/locations-search/:id', to: 'locations#search', as: :search
+  # post '/locations-search/:id', to: 'locations#search', as: :search
 
   delete '/logout', to: 'sessions#destroy'
-
+  # gives heroku correct root route
   get '/locations', to: 'locations#index'
 
 

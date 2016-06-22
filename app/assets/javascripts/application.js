@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require_tree .
 // 
+
+$(document).ready(function(){
+ console.log('working')
+  $('#sign_up').click(function(){
+ console.log('not working')
+    $('#modal').show;
+    $('sign_up_form').show;
+	});
+});
