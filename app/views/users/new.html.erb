@@ -1,10 +1,10 @@
 <div id="sign_up_form">
 	<%= form_for User.new do |f| %>
-	<%=f.text_field :fname, placeholder: "first name" %>
-	<%=f.text_field :lname, placeholder: "last name" %>
-	<%=f.text_field :email, placeholder: "email address" %>
-	<%=f.text_field :password, placeholder: "password" %>
-	<%=f.text_field :phone, placeholder: "phone number" %>
-	<%=f.submit %>
+	<%= f.text_field :fname, placeholder: "first name" %>
+	<%= f.text_field :lname, placeholder: "last name" %>
+	<%= f.text_field :email, placeholder: "email address" %>
+	<%= f.text_field :password, placeholder: "password" %>
+	<%= f.text_field :phone, placeholder: "phone number" %>
+	<%= f.submit %>
 	<% end %>
 </div>
