@@ -15,9 +15,10 @@
  */
 
 header {
+	color: #FFFFF2;
 	text-align: center;
-	border: 3px outset #008ae6;
-	background-color: #0099ff;
+	border: 3px outset #df6c53;
+	background: #de6449
 }
 
 h1 {
@@ -28,6 +29,21 @@ h1 {
 	display: none;
 }
 
+/*body {
+	background-color: #de6449;
+	background-image: url("https://media.giphy.com/media/xTiTnwsbS30gLcF5Cw/giphy.gif")
+}*/
+
+#sign_up_form {
+	display: none;
+	margin: -3% 33%;
+	z-index: 500;
+	position: absolute;
+	background: blue;
+	width: 300px;
+	padding: 50px;
+}
+
 #modal {
 	display: none;
 	width: 100%;
@@ -35,8 +51,10 @@ h1 {
 	position: fixed;
 	top: 0;	
 	background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 .results {
 	text-align: center;
 }
+

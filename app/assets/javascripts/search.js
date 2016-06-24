@@ -1,38 +1,111 @@
-// var responses = [
-//     '<div class="results"><h4>Name: <%= @response.businesses[0].name %></h4><h4>Phone number: <%= @response.businesses[0].phone %></h4><h4>Address: <%= @response.businesses[0].location.display_address %></h4><h4>Rating: <%= @response.businesses[0].rating %></h4><h4>Review Snippet: <%= @response.businesses[0].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[1].name %></h4><h4>Phone number: <%= @response.businesses[1].phone %></h4><h4>Address: <%= @response.businesses[1].location.display_address %></h4><h4>Rating: <%= @response.businesses[1].rating %></h4><h4>Review Snippet: <%= @response.businesses[1].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[2].name %></h4><h4>Phone number: <%= @response.businesses[2].phone %></h4><h4>Address: <%= @response.businesses[2].location.display_address %></h4><h4>Rating: <%= @response.businesses[2].rating %></h4><h4>Review Snippet: <%= @response.businesses[2].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[3].name %></h4><h4>Phone number: <%= @response.businesses[3].phone %></h4><h4>Address: <%= @response.businesses[3].location.display_address %></h4><h4>Rating: <%= @response.businesses[3].rating %></h4><h4>Review Snippet: <%= @response.businesses[3].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[4].name %></h4><h4>Phone number: <%= @response.businesses[4].phone %></h4><h4>Address: <%= @response.businesses[4].location.display_address %></h4><h4>Rating: <%= @response.businesses[4].rating %></h4><h4>Review Snippet: <%= @response.businesses[4].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[5].name %></h4><h4>Phone number: <%= @response.businesses[5].phone %></h4><h4>Address: <%= @response.businesses[5].location.display_address %></h4><h4>Rating: <%= @response.businesses[5].rating %></h4><h4>Review Snippet: <%= @response.businesses[5].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[6].name %></h4><h4>Phone number: <%= @response.businesses[6].phone %></h4><h4>Address: <%= @response.businesses[6].location.display_address %></h4><h4>Rating: <%= @response.businesses[6].rating %></h4><h4>Review Snippet: <%= @response.businesses[6].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[7].name %></h4><h4>Phone number: <%= @response.businesses[7].phone %></h4><h4>Address: <%= @response.businesses[7].location.display_address %></h4><h4>Rating: <%= @response.businesses[7].rating %></h4><h4>Review Snippet: <%= @response.businesses[7].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[8].name %></h4><h4>Phone number: <%= @response.businesses[8].phone %></h4><h4>Address: <%= @response.businesses[8].location.display_address %></h4><h4>Rating: <%= @response.businesses[8].rating %></h4><h4>Review Snippet: <%= @response.businesses[8].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[9].name %></h4><h4>Phone number: <%= @response.businesses[9].phone %></h4><h4>Address: <%= @response.businesses[9].location.display_address %></h4><h4>Rating: <%= @response.businesses[9].rating %></h4><h4>Review Snippet: <%= @response.businesses[9].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[10].name %></h4><h4>Phone number: <%= @response.businesses[10].phone %></h4><h4>Address: <%= @response.businesses[10].location.display_address %></h4><h4>Rating: <%= @response.businesses[10].rating %></h4><h4>Review Snippet: <%= @response.businesses[10].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[11].name %></h4><h4>Phone number: <%= @response.businesses[11].phone %></h4><h4>Address: <%= @response.businesses[11].location.display_address %></h4><h4>Rating: <%= @response.businesses[11].rating %></h4><h4>Review Snippet: <%= @response.businesses[11].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[12].name %></h4><h4>Phone number: <%= @response.businesses[12].phone %></h4><h4>Address: <%= @response.businesses[12].location.display_address %></h4><h4>Rating: <%= @response.businesses[12].rating %></h4><h4>Review Snippet: <%= @response.businesses[12].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[13].name %></h4><h4>Phone number: <%= @response.businesses[13].phone %></h4><h4>Address: <%= @response.businesses[13].location.display_address %></h4><h4>Rating: <%= @response.businesses[13].rating %></h4><h4>Review Snippet: <%= @response.businesses[13].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[14].name %></h4><h4>Phone number: <%= @response.businesses[14].phone %></h4><h4>Address: <%= @response.businesses[14].location.display_address %></h4><h4>Rating: <%= @response.businesses[14].rating %></h4><h4>Review Snippet: <%= @response.businesses[14].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[15].name %></h4><h4>Phone number: <%= @response.businesses[15].phone %></h4><h4>Address: <%= @response.businesses[15].location.display_address %></h4><h4>Rating: <%= @response.businesses[15].rating %></h4><h4>Review Snippet: <%= @response.businesses[15].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[16].name %></h4><h4>Phone number: <%= @response.businesses[16].phone %></h4><h4>Address: <%= @response.businesses[16].location.display_address %></h4><h4>Rating: <%= @response.businesses[16].rating %></h4><h4>Review Snippet: <%= @response.businesses[16].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[17].name %></h4><h4>Phone number: <%= @response.businesses[17].phone %></h4><h4>Address: <%= @response.businesses[17].location.display_address %></h4><h4>Rating: <%= @response.businesses[17].rating %></h4><h4>Review Snippet: <%= @response.businesses[17].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[18].name %></h4><h4>Phone number: <%= @response.businesses[18].phone %></h4><h4>Address: <%= @response.businesses[18].location.display_address %></h4><h4>Rating: <%= @response.businesses[18].rating %></h4><h4>Review Snippet: <%= @response.businesses[18].snippet_text.gsub("\n", " ") %></h4></div>',
-//     '<div class="results"><h4>Name: <%= @response.businesses[19].name %></h4><h4>Phone number: <%= @response.businesses[19].phone %></h4><h4>Address: <%= @response.businesses[19].location.display_address %></h4><h4>Rating: <%= @response.businesses[19].rating %></h4><h4>Review Snippet: <%= @response.businesses[19].snippet_text.gsub("\n", " ") %></h4></div>'
-//   ]
-//   var i = 0
-//   $('#results').append(responses[i])
-
-//   $('#next').css({
-//     "display": "block",
-//     "margin": "0 auto"
+// $(document).ready(function(){
+//  console.log('working')
+//   $('#sign_up').click(function(){
+//  console.log('not working')
+//     $('#modal').show;
+//     $('sign_up_form').show;
 //   });
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
-//   $('#next').click(function(){
-//     i++
-//     if(i == 20){
-//       $('#next').hide()
-//     }
-//     $('#results').empty();
-//     $('#results').append(responses[i])
-//   })
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      // detects current location
+      // navigator.geolocation.getCurrentPosition();
+
+      // var latitude = position.coords.latitude;
+      // var longitude = position.coords.longitude;
+
+      // var browserSupportFlag =  new Boolean();
+
+      function initAutoComplete() {
+      	var nycda = {lat: 40.707992, lng: -74.006586}
+        var map = new google.maps.Map(document.getElementById('map'), {
+			  	center: nycda,
+			  	zoom: 15
+          // mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        // browser detects current location
+        // if(navigator.geolocation) {
+        //   browserSupportFlag = true;
+        //   navigator.geolocation.getCurrentPosition(function(position) {
+        //     initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+        //     map.setCenter(initialLocation);
+        //   }, function() {
+        //     handleNoGeolocation(browserSupportFlag);
+        //   });
+        // }
+        // // Browser doesn't support Geolocation
+        // else {
+        //   browserSupportFlag = false;
+        //   handleNoGeolocation(browserSupportFlag);
+        // }
+
+        var marker = new google.maps.Marker({
+          position: initialLocation,
+          map: map,
+          title: 'Hello World!'
+        });
+
+        // adds marker to the map
+        marker.setMap(initialLocation);
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        // var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+// });

@@ -20,7 +20,13 @@ $(document).ready(function(){
  console.log('working')
   $('#sign_up').click(function(){
  console.log('not working')
-    $('#modal').show;
-    $('sign_up_form').show;
+    $('#modal').show();
+    $('#sign_up_form').show();
 	});
+	// give sign uq submit button id and put that in click event
+	$("#modal").click(function(){
+		$("#modal").hide();
+		$("#sign_up_form").hide();
+	});
+
 });

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       flash[:notice] = "Profile created successfully"
-      redirect_to user_path(@user)
+      redirect_to locations_path
     else
       flash[:alert] = "Sorry, something went wrong."
       render :new

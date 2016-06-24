@@ -8,8 +8,17 @@ nav {
 		display: inline;
 		}
 		a {
-			color: black;
+			color: #791E94;
 			text-decoration: none;
+		}
+
+		a:hover {
+			color: #FFFFF2;
+		}
+
+		#sign_up {
+			color: #791E94;
+			font-weight: 500;
 		}
 	}
 	// @media (max-width: 1332px) and (min-width: 992px) {

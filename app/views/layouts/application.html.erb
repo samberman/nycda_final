@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+   /*body { background: #de6449 !important; } *//* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+  </style>
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- bootstrap javascript -->
@@ -20,6 +23,18 @@
   <div id="modal">
 
   </div>
+
+<div id="sign_up_form">
+  <%= form_for User.new do |f| %>
+  <%= f.text_field :fname, placeholder: "first name" %>
+  <%= f.text_field :lname, placeholder: "last name" %>
+  <%= f.text_field :email, placeholder: "email address" %>
+  <%= f.text_field :password, placeholder: "password" %>
+  <%= f.text_field :phone, placeholder: "phone number" %>
+  <%= f.submit %>
+  <% end %>
+</div>
+
 	<% if flash[:alert] %>
 	<%= flash[:alert] %>
 	<% end %>
