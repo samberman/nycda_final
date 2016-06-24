@@ -56,6 +56,7 @@ class LocationsController < ApplicationController
       parameters = { term: params[:term], radius_filter: params[:radius_filter] }
       # current_location = { current_location: params[:current_location]}
       # API call, search params are being defined
+      @current_location = params[:current_location]
       @response = Yelp.client.search(params[:current_location], parameters )
       # category_filter: 'food'}
       # render json: Yelp.client.search(params[:current_location], params)

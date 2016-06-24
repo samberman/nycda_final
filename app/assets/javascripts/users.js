@@ -1,79 +1,37 @@
-// $(document).ready(function(){
-//  console.log('working')
-//   $('#sign_up').click(function(){
-//  console.log('not working')
-//     $('#modal').show;
-//     $('sign_up_form').show;
-//   });
-      // This example adds a search box to a map, using the Google Place Autocomplete
-      // feature. People can enter geographical searches. The search box will return a
-      // pick list containing a mix of places and predicted search terms.
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(40.707992, -74.006586);
+  var mapOptions = {
+    zoom: 15,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-      function initAutoComplete() {
-      	var nycda = {lat: 40.707992, lng: -74.006586}
-        var map = new google.maps.Map(document.getElementById('map'), {
-			  	center: nycda,
-			  	zoom: 15
-          // mapTypeId: google.maps.MapTypeId.ROADMAP
+$(document).ready(function(){
+  $(window).load(function(){
+    // address is grabbed via the data attribute
+    var currentLocation = $("#location").data('loc');
+    console.log(currentLocation);
+    if (currentLocation.length > 1) {
+      codeAddress(currentLocation)
+    }
+  });
+  // address is geocoded here
+  function codeAddress(address) {
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        // marker is put on the map here
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
         });
-
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
-
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
-
-          if (places.length == 0) {
-            return;
-          }
-
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
-
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          places.forEach(function(place) {
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
-        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
       }
-// });
+    });
+  }
+});
