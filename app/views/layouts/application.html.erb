@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>FoodRoulette</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,9 +17,9 @@
 <body>
 	<div class="row">
     <header>
-      <div id="title"><h1>FoodRoulette</h1></div>
-      <div class="col-md-8"><%= render "shared/nav" %></div>
+      <div class="col-md-4" id="title"><h1>FoodRoulette</h1></div>
     </header>
+      <div class="col-sm-8"><%= render "shared/nav" %></div>
   </div>
   <div id="modal">
 
