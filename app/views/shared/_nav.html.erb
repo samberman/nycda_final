@@ -4,7 +4,6 @@
 			<li><%= link_to "Users", users_path %></li>
 			<li><%= link_to "Search again", locations_path(@location) %></li>
 			<li><%= link_to("Sign out",logout_path, method: :delete) %></li>
-      <!-- <li></li> -->
 			<% else %>
 			<li id="sign_up">Sign up</li>
 			<li><%= link_to "Log in!", login_path %></li>

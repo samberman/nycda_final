@@ -14,11 +14,19 @@
  *= require_self
  */
 
+* {
+	font-family: 'Cabin', sans-serif;
+}
 header {
 	color: #FFFFF2;
-	text-align: center;
+	/*text-align: center;*/
 	border: 3px outset #df6c53;
-	background: #de6449
+	background: #de6449;
+	float: none;
+}
+
+nav ul {
+	padding-right: 5px;
 }
 
 h1 {

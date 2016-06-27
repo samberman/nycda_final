@@ -1,5 +1,3 @@
-// $(document).ready(function(){
-// 	$('#sign_up').click(function(){
-// 		$('#modal').show;
-// 	});
-// })
+// function myFunction() {
+//     document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+// }

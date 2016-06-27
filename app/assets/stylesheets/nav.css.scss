@@ -17,23 +17,63 @@ nav {
 		}
 
 		#sign_up {
-			color: #791E94;
+			color: #FFFFF2;
 			font-weight: 500;
 		}
 	}
+}
 	// @media (max-width: 667px) and (min-width: 992px) {
 	// 	body {
 	// 		background-color: blue;
 	// 	}
 	// }
-}
 
+// ul.topnav {
+// 	list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+  
+//   li {
+//   	float: right;
+//   }
+//   a {
+//   	display: inline-block;
+//   	// color: #FFFFF2;
+//   	color: black;
+//   	text-align: center;
+//   	text-decoration: none;
+//   	transition: 0.3s;
+//   }
+//   .icon {
+//   	display: none;
+//   }
+// }
 
+// @media screen and (max-width:680px) {
+//   ul.topnav li:not(:first-child) {display: none;}
+//   ul.topnav li.icon {
+//     float: right;
+//     display: inline-block;
+//   }
+// }
 
-
-
-
-
+// @media screen and (max-width:680px) {
+//   ul.topnav.responsive {position: relative;}
+//   ul.topnav.responsive li.icon {
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//   }
+//   ul.topnav.responsive li {
+//     float: none;
+//     display: inline;
+//   }
+//   ul.topnav.responsive li a {
+//     display: block;
+//     text-align: left;
+//   }
+// }
 
 
 

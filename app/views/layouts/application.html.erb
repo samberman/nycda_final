@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <title>FoodRoulette</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style type="text/css">
-   /*body { background: #de6449 !important; } *//* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-  </style>
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- bootstrap javascript -->
@@ -19,7 +17,21 @@
     <header>
       <div class="col-md-4" id="title"><h1>FoodRoulette</h1></div>
     </header>
-      <div class="col-sm-8"><%= render "shared/nav" %></div>
+      <!-- <div class="col-sm-8">< %= render "shared/nav" %></div> -->
+      <div class="col-md-8">
+      <nav>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Search again", locations_path(@location) %></li>
+            <li><%= link_to("Sign out",logout_path, method: :delete) %></li>
+            <% else %>
+            <li id="sign_up">Sign up</li>
+            <li><%= link_to "Log in!", login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+      </div>
   </div>
   <div id="modal">
 

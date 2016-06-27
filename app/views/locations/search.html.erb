@@ -2,25 +2,25 @@
   <!-- gives space for results -->
   <div id='results'>
   </div>
-  <div>
-  <%= button_tag "Roll Again", id: "next" %>
-  <button id="map_me">Get me there!</button>
-  </div>
+ 
+  <div id="dice" id="button"><%= image_submit_tag ("http://images.clipshrine.com/download/wheel/large-two-red-dice-66.6-3210.png"), id: "next" %>
+ 
+  <!-- <button id="map_me">Get me there!</button> -->
   <!-- < % = button_tag "Map", user_path %> -->
 </div>
 <!-- address is grabbed from the form via the data attribute -->
 <div id="location" data-loc= "<%= @current_location %>"></div>
 
 <!-- gives the map space on the page -->
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GMAPS_KEY"]%>&libraries=places&callback=initialize" async defer></script>
+<!-- <div id="map"></div>
+< script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GMAPS_KEY"]%>&libraries=places&callback=initialize" async defer></script> -->
 <!-- <img src="< %= @response.businesses[0].image_url %>"> -->
 <!-- < % @response.businesses[0].location.coordinate.latitude %> -->
 
 <script type="text/javascript">
 
   var responses = [
-    '<div id="response0" data-coords0="<%= @response.businesses[0].location.coordinate.latitude %>, <%= @response.businesses[0].location.coordinate.longitude %>" class="results"><img src="<%= @response.businesses[0].image_url %>"><h2><%= @response.businesses[0].name %></h2><h4><div class="glyphicon glyphicon-earphone"></div> <%= @response.businesses[0].phone %></h4><h4><%= @response.businesses[0].location.address %></h4><h4><%= @response.businesses[0].location.city %></h4><h4><%= @response.businesses[0].location.state_code %></h4><h4><%= @response.businesses[0].location.postal_code %></h4><h4>Rating: <%= @response.businesses[0].rating %></h4><h4>Review Snippet: <%= @response.businesses[0].snippet_text.gsub("\n", " ") %></h4></div>',
+    '<div id="response0" data-coords0="<%= @response.businesses[0].location.coordinate.latitude %>, <%= @response.businesses[0].location.coordinate.longitude %>" class="results"><div class="photo"><img src="<%= @response.businesses[0].image_url %>"></div><h2><%= @response.businesses[0].name %></h2><h4><div class="glyphicon glyphicon-earphone"></div> <%= @response.businesses[0].phone %></h4><h4><%= @response.businesses[0].location.address %></h4><h4><%= @response.businesses[0].location.city %></h4><h4><%= @response.businesses[0].location.state_code %></h4><h4><%= @response.businesses[0].location.postal_code %></h4><h4>Rating: <%= @response.businesses[0].rating %></h4><h4>Review Snippet: <%= @response.businesses[0].snippet_text.gsub("\n", " ") %></h4></div>',
     '<div id="response1" data-coords1="<%= @response.businesses[1].location.coordinate.latitude %>, <%= @response.businesses[1].location.coordinate.longitude %>"  class="results"><img src="<%= @response.businesses[1].image_url %>"<br><h2><%= @response.businesses[1].name %></h2><h4><div class="glyphicon glyphicon-earphone"></div> <%= @response.businesses[1].phone %></h4><h4><%= @response.businesses[1].location.address %></h4><h4><%= @response.businesses[1].location.city %></h4><h4><%= @response.businesses[1].location.state_code %></h4><h4><%= @response.businesses[1].location.postal_code %></h4><h4>Rating: <%= @response.businesses[1].rating %></h4><h4>Review Snippet: <%= @response.businesses[1].snippet_text.gsub("\n", " ") %></h4></div>',
     '<div id="response2" data-coords2="<%= @response.businesses[2].location.coordinate.latitude %>, <%= @response.businesses[2].location.coordinate.longitude %>"  class="results"><img src="<%= @response.businesses[2].image_url %>"<br><h2><%= @response.businesses[2].name %></h2><h4><div class="glyphicon glyphicon-earphone"></div> <%= @response.businesses[2].phone %></h4><h4><%= @response.businesses[2].location.address %></h4><h4><%= @response.businesses[2].location.city %></h4><h4><%= @response.businesses[2].location.state_code %></h4><h4><%= @response.businesses[2].location.postal_code %></h4><h4>Rating: <%= @response.businesses[2].rating %></h4><h4>Review Snippet: <%= @response.businesses[2].snippet_text.gsub("\n", " ") %></h4></div>',
     '<div id="response3" data-coords3="<%= @response.businesses[3].location.coordinate.latitude %>, <%= @response.businesses[3].location.coordinate.longitude %>"  class="results"><img src="<%= @response.businesses[3].image_url %>"<br><h2><%= @response.businesses[3].name %></h2><h4><div class="glyphicon glyphicon-earphone"></div> <%= @response.businesses[3].phone %></h4><h4><%= @response.businesses[3].location.address %></h4><h4><%= @response.businesses[3].location.city %></h4><h4><%= @response.businesses[3].location.state_code %></h4><h4><%= @response.businesses[3].location.postal_code %></h4><h4>Rating: <%= @response.businesses[3].rating %></h4><h4>Review Snippet: <%= @response.businesses[3].snippet_text.gsub("\n", " ") %></h4></div>',
