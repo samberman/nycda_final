@@ -85,4 +85,12 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:address, :latitude, :longitude)
   end
+ 
+  def client
+    @client ||= Yelp::Client.new({ consumer_key: ENV['config.CONSUMER_KEY'],
+      consumer_secret: ENV['config.CONSUMER_SECRET'],
+      token: ENV['config.TOKEN'],
+      token_secret: ENV['config.TOKEN_SECRET']
+    })
+  end
 end
