@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 body {
 	margin: 0 auto;
 }
@@ -12,18 +13,20 @@ body {
 	// padding: 20px;
 }
 
-#dice {
-	height: 160px;
-	// width: 50px;
+#di {
+	width: 171px;
+	padding: 5px 50px;
+	background: #de6449;
+	border-radius: 25px;
+	// margin-left: 100px;
 }
-
-
 
 #results {
 	text-align: center;
 }
 
-#next {
-	display: block;
-	margin: 0 auto;
+@media all and (min-width: 992px){
+	#dice {
+		margin-right: 175px;
+	}
 }

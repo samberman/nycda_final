@@ -7,6 +7,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+   body { background: #0099ff !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
   <!-- bootstrap css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- bootstrap javascript -->
@@ -15,7 +18,7 @@
 <body>
 	<div class="row">
     <header>
-      <div class="col-md-4" id="title"><h1>FoodRoulette</h1></div>
+      <div class="col-md-4 col-lg-4" id="title"><h1>FoodRoulette</h1></div>
     </header>
       <!-- <div class="col-sm-8">< %= render "shared/nav" %></div> -->
       <div class="col-md-8">

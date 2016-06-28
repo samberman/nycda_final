@@ -17,12 +17,18 @@
 * {
 	font-family: 'Cabin', sans-serif;
 }
+
+body {
+	background: #0099ff;
+}
+
 header {
 	color: #FFFFF2;
 	/*text-align: center;*/
 	border: 3px outset #df6c53;
 	background: #de6449;
 	float: none;
+	min-height: 48px;
 }
 
 nav ul {
