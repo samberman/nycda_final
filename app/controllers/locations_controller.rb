@@ -87,10 +87,10 @@ class LocationsController < ApplicationController
   end
  
   def client
-    @client ||= Yelp::Client.new({ consumer_key: ENV['config.CONSUMER_KEY'],
-      consumer_secret: ENV['config.CONSUMER_SECRET'],
-      token: ENV['config.TOKEN'],
-      token_secret: ENV['config.TOKEN_SECRET']
+    @client ||= Yelp::Client.new({ consumer_key: ENV['CONSUMER_KEY'],
+      consumer_secret: ENV['CONSUMER_SECRET'],
+      token: ENV['TOKEN'],
+      token_secret: ENV['TOKEN_SECRET']
     })
   end
 end
