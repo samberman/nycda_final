@@ -53,9 +53,13 @@ h1 {
 	margin: -3% 33%;
 	z-index: 500;
 	position: absolute;
-	background: blue;
+	background: #de6449;
 	width: 300px;
 	padding: 50px;
+}
+
+#new_user {
+	text-align: center;
 }
 
 #modal {
@@ -72,3 +76,8 @@ h1 {
 	text-align: center;
 }
 
+@media all and (max-width: 495px) {
+	#sign_up_form {
+		margin: 0px 45px;
+	}
+}
